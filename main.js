@@ -21,6 +21,8 @@
 // - An IMMUTABLE Data Structure is
 //      EXAMPLES: 
 
+// - An off-by-one error is a frequent problem in zero-based indexing languages like JavaScript.
+
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -120,6 +122,23 @@
 
 // - An empty string is represented by quotation marks with nothing between them, such as "".
 //      EXAMPLE: let result = "";
+//               console.log(result); // You will not see anything printed
+
+// - You can use the addition operator (+) to increase the value of a string, similarly to how you can use it to increase the value of a variable,
+// by appending a new string to an existing string.
+//      EXAMPLE: hello = hello + " World";
+// - In the above example, this would add the string " World" to the existing string stored in the hello variable.
+// - This is called CONCATENATION.
+
+// - Pressing the return key to insert a line break between quotes in JavaScript will result in a parsing error.
+// - Instead, you can use the special ESCAPE SEQUENCE "\n", which is interpreted as a new line when the string is logged.
+//      EXAMPLE: lineOne = lineOne + "\n" + lineTwo;
+
+// - .repeat() is a method available to strings. 
+// - This method accepts a number as an argument, specifying the number of times to repeat the target string.
+// - The following example uses .repeat() to generate the string "Code! Code! Code!":
+//      EXAMPLE: const activity = "Code! ";
+//               activity.repeat(3);
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -214,9 +233,9 @@
 // - There are many ways to write a loop.
 
 // - A basic for loop uses the following syntax:
-//      EXAMPLE: for (iterator; condition; iteration) {
+//      SYNTAX: for (iterator; condition; iteration) {
 //                  logic;
-//               }
+//              }
 // - The "iterator", "condition", and "iteration" are the three components.
 // - The loop body is the section within the curly braces {}.
 
@@ -243,7 +262,7 @@
 //      EXAMPLE: const count = 8;
 //               for (let i = 0; i < count; i = i + 1) {
 //                   console.log(i)
-//                   }                  // In the Console, this would print 0
+//               }                      // In the Console, this would print 0
 //                                                                          1
 //                                                                          2
 //                                                                          3
@@ -251,6 +270,92 @@
 //                                                                          5
 //                                                                          6
 //                                                                          7
+
+// - To manipulate a string, you can use a different type of loop.
+// - A for...of loop iterates over each item in an iterable object and temporarily assigns it to a variable.
+// - The syntax for a for...of loop looks like:
+//      SYNTAX: for (const value of iterable) {
+// 
+//              }
+//      EXAMPLE: for (const row of rows) {
+// 
+//               }
+// NOTE: You can use const because the variable only exists for a single iteration, not during the entire loop.
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ** FUNCTIONS **
+
+
+// - When the logic for formatting certain code is likely going to get complicated, it means it's a great time to 
+// extract that code into a function.
+// - A FUNCTION is a block of code that can be reused throughout your application.
+// - Functions are declared with the following syntax:
+//      SYNTAX: function name(parameter) {
+// 
+//              }
+// - The function keyword tells JavaScript that the name variable is going to be a function. 
+// - A PARAMETER is a variable that represents a value that is passed into the function when it is used.
+// - A function may have as many, or as few, parameters as you'd like.
+// - Like a for loop, the space between the curly braces is the FUNCTION BODY.
+// - When declaring a function, you need to use camel case for your naming convention.
+
+// - In order to use a function, you need to call it.
+// - A FUNCTION CALL tells your application to run the code from the function wherever you choose to call it.
+// - The syntax for a function call is the function name followed by parentheses.
+// - In the following example, this code defines and calls a test function:
+//      EXAMPLE: function test() {
+// 
+//               }
+//               test();
+
+// - All functions in JavaScript return a value, meaning they provide the defined result of calling them for you to use elsewhere.
+// - To see the result of calling your function, you can declare a variable and assign your existing function call to that variable.
+//      EXAMPLE: const call = test();
+
+// - If your functin does not currently return a value, then the variable assigned to your function call will have an undefined value,
+// even if you defined it.
+//      EXAMPLE: function test() {
+// 
+//               }
+//               test();
+//               const call = test();
+//               console.log(call); // This will print undefined to the console
+
+// - By default, functions return UNDEFINED as their value.
+// - In order to return something else, you need to use the RETURN keyword.
+// - The following is an example of a function that returns the string "Functions are cool!":
+//      EXAMPLE: function demo() {
+//                 return "Functions are cool!";
+//               }
+
+// - When you have a value that is explicitly written in your code, like the "Functions are cool!" string in the function above, 
+// it is considered to be HARD-CODED.
+// - Hard-coding a value inside a function might not make it as reusable as you'd like.
+// - Instead, you can define parameters for the function.
+// - PARAMETERS are special variables that are given a value when you call the function, and can be used in your function to dynamically 
+// change the result of the function's code.
+// - To add a parameter to your function, you need to add a variable name inside the parentheses.
+// - In the following example, this demo function has a name parameter:
+//      EXAMPLE: function demo(name) {
+// 
+//               }
+
+// - A function does not have to return a hard-coded value. It can return the value stored in a variable.
+// - Parameters are special variables for a function, so they can also be returned.
+
+// NOTE: Parameters need to be given a value when you call the function, otherwise when you open your console again you'll see that your 
+// function is returning undefined, even though you defined a return value.
+
+// - When you pass a value to a function call, that value is referred to as an ARGUMENT. 
+// - The following is an example of calling a demo function and passing "Naomi" as the argument for the name parameter:
+//      EXAMPLE: function demo(name) {
+//                  return name;
+//               }
+//               demo("Naomi");
+
+// 
 
 
 
