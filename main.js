@@ -349,13 +349,61 @@
 // function is returning undefined, even though you defined a return value.
 
 // - When you pass a value to a function call, that value is referred to as an ARGUMENT. 
-// - The following is an example of calling a demo function and passing "Naomi" as the argument for the name parameter:
+// - The following is an example of calling a function and passing "Naomi" as the argument for the name parameter:
 //      EXAMPLE: function demo(name) {
 //                  return name;
 //               }
 //               demo("Naomi");
 
+// - An important thing to know about the RETURN keyword is that it does not just define a value to be returned from your function, it also 
+// stops the execution of your code inside a function or a block statement.
+// - This means any code after a return statement will not run.
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ** SCOPE **
+
+
+// - Variables in JavaScript are available in a specific SCOPE. In other words, where a variable is declared determines 
+// where in your code it can be used.
+// - The first scope is the global scope. Variables that are declared outside of any "block" like a function or for loop are
+// in the GLOBAL SCOPE.
+// - When a variable is in the global scope, a function can access it in its definition.
+// - The following is an example of a function using a global title variable:
+//      EXAMPLE: const title = "Professor ";
+//               function demo(name) {
+//                  return title + name;
+//               }
+//               demo("Naomi")
+// - This example would return "Professor Naomi".
+
+// - Variables can also be declared inside a function. These variables are considered to be in the LOCAL SCOPE, or BLOCK SCOPE.
+// - A variable declared inside a function can only be used inside that function. If you try to access it outside of the function, 
+// you get a reference error.
+//      EXAMPLE: function learningToCode(name) {
+//                  const test = "Testing";
+//               }
+//               console.log(test)  // In the console, this will print ReferenceError: test is not defined
+// - In the above example, you will see an error because the variable test is not defined outside of the function's local scope.
+
+// - Values returned out of a function are used by calling the function.
+// - You can use the function call directly as the value it returns, or capture the returned value in a variable.
+// - This way, you can use the value assigned to a locally scoped variable, outside the function it was created in.
+//      EXAMPLE: function getName() {
+//                  const name = "Camper cat";
+//                  return name;
+//               }
 // 
+//               console.log(getName()); // "Camper cat"
+// 
+//               const capturedReturnValue = getName();
+//               console.log(capturedReturnValue); // "Camper cat"
+//
+//               console.log(name); // reference error
+
+
+
 
 
 
