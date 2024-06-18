@@ -7,11 +7,13 @@
 // - JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, 
 // along with HTML and CSS. All modern browsers support JavaScript.
 
+
 // - Primitive data types can only hold one value at a time.
 //      -> JavaScript has seven primitive data types: String, Number, 
 
 // - Non-primitive data types can hold more complex data.
 //      -> JavaScript non-primitive data types: Array,
+
 
 // MUTABLE vs IMMUTABLE:
 
@@ -20,6 +22,7 @@
 
 // - An IMMUTABLE Data Structure is
 //      EXAMPLES: 
+
 
 // - An off-by-one error is a frequent problem in zero-based indexing languages like JavaScript.
 
@@ -94,7 +97,7 @@
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// ** NUMBERS **
+// ** NUMBERS AND MATHEMATICAL OPERATORS **
 
 
 // - When using a number value, you do not use quotes.
@@ -107,6 +110,21 @@
 // - You can also perform subtraction (-), multiplication (*), and division (/). 
 //      EXAMPLE: let count = 8;
 //               console.log(count * 5);
+
+// - The addition operator is not the only way to add values to a variable.
+// - The ADDITION ASSIGNMENT OPERATOR (+=) can be used as shorthand to mean "take the original value of the variable, add this value, and 
+// assign the result back to the variable."
+// - For example, the following two statements would yield the same result:
+//      EXAMPLE: test = test + 1;
+//               test += 1;
+
+// - If you are only increasing i by 1, you can use the INCREMENT OPERATOR (++).
+// - This operator increases the value of a variable by 1, updating the assignment for that variable.
+// - In the following example, test would become 8 here:
+//      EXAMPLE: let test = 7;
+//               test++;
+
+// -
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -129,6 +147,10 @@
 //      EXAMPLE: hello = hello + " World";
 // - In the above example, this would add the string " World" to the existing string stored in the hello variable.
 // - This is called CONCATENATION.
+
+// - You can use the addition operator to concatenate a single space " " to the beginning and end of a string.
+// - Remember that you can use the + operator to concatenate strings like this:
+//      EXAMPLE: " " + "string"
 
 // - Pressing the return key to insert a line break between quotes in JavaScript will result in a parsing error.
 // - Instead, you can use the special ESCAPE SEQUENCE "\n", which is interpreted as a new line when the string is logged.
@@ -204,10 +226,14 @@
 // - A METHOD in JavaScript is a function that's associated with certain values or objects.
 // - An example of this is the .log() method, which is part of the console object.
 
+// - ** ARRAY METHODS **
+
+// - .push()
 // - Arrays have their own methods, such as the .push() method. This allows you to "push" a value to the end of an array.
 // - The following example adds the number 12 to the end of an array:
 //      EXAMPLE: array.push(12);
 
+// - .pop()
 // - Another essential method is the .pop() method. It removes the last element from an array and returns that element.
 // - When a method returns a value, you can think of it as giving the value back to you, making it available for use 
 // in other parts of your code.
@@ -218,6 +244,7 @@
 // - In the above example, "Jason" is printed to the console. This is because .pop() returns the value that was removed 
 // from the array - and "Jason" was pushed to the end of the array earlier.
 
+// - .push()
 // - .push() also returns the new length of an array, after adding the value you give it.
 //      EXAMPLE: let rows = ["Naomi", "Quincy", "CamperChan"];
 //               let pushed = rows.push("Jason");
@@ -345,7 +372,7 @@
 // - A function does not have to return a hard-coded value. It can return the value stored in a variable.
 // - Parameters are special variables for a function, so they can also be returned.
 
-// NOTE: Parameters need to be given a value when you call the function, otherwise when you open your console again you'll see that your 
+// NOTE: PARAMETERS need to be given a value when you call the function, otherwise when you open your console again you'll see that your 
 // function is returning undefined, even though you defined a return value.
 
 // - When you pass a value to a function call, that value is referred to as an ARGUMENT. 
@@ -358,6 +385,36 @@
 // - An important thing to know about the RETURN keyword is that it does not just define a value to be returned from your function, it also 
 // stops the execution of your code inside a function or a block statement.
 // - This means any code after a return statement will not run.
+
+// NOTE: If your function is no longer using the parameter, changing the value passed in the call will not affect it.
+
+// - Multiple parameters are separated by a comma:
+//      EXAMPLE: function name(first, second) {
+// 
+//               }
+
+// - A function can RETURN a value for your application to consume separately.
+// - In a function, the return keyword is used to specify a return value. 
+// - In the following example, this function would return the value given to the first parameter:
+//      EXAMPLE: function name(parameter) {
+//                  return parameter;
+//               }
+
+// - A FUNCTION CALL allows you to actually use a function. You may not have been aware of it, but methods like .push() have been function calls.
+// - A function is called by referencing the function's name, and adding ().
+// - Here's how to call a function called test:
+//      EXAMPLE: test();
+
+// - Values are provided to the parameters of your function when the function is called.
+// - The values you provide to a function call are referred to as ARGUMENTS, and you pass arguments to a function call.
+// - Here's a function call with "Hello" passed as an argument:
+//      EXAMPLE: test("Hello");
+// - Like parameters, arguments are separated by a comma.
+
+// - You can pass full expressions as an argument. The function will receive the result of evaluating that expression.
+// - For example, the following two function calls would yield the same result:
+//      EXAMPLE: test(2 * 3 + 1);
+//               test(7);
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
