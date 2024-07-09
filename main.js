@@ -7,9 +7,13 @@
 // - JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, 
 // along with HTML and CSS. All modern browsers support JavaScript.
 
+// - JavaScript is a SYNCHRONOUS language with ASYNCHRONOUS capabilities
+
+
+// PRIMITIVE DATA TYPES vs NON-PRIMITIVE DATA TYPES:
 
 // - Primitive data types can only hold one value at a time.
-//      -> JavaScript has seven primitive data types: String, Number, 
+//      -> JavaScript has seven primitive data types: String, Number, Bigint, Boolean, Undefined, Symbol, and Null.
 
 // - Non-primitive data types can hold more complex data.
 //      -> JavaScript non-primitive data types: Array,
@@ -25,6 +29,22 @@
 
 
 // - An off-by-one error is a frequent problem in zero-based indexing languages like JavaScript.
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ** COMMENTS **
+
+
+// - COMMENTS can be helpful for explaining why your code takes a certain approach, or leaving to-do notes for your future self.
+// - In JavaScript, you can use // to leave a single-line comment in your code.
+
+// - JavaScript also has support for multi-line comments. A MULTI-LINE COMMENT starts with /* and ends with */.
+// - Unlike a single-line comment, a multi-line comment will encapsulate multiple lines.
+
+// - Sometimes you may wish to bring back previous code that you commented out.
+// - You can do so by removing the /* and */ around that code.
+// - This is called UNCOMMENTING.
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -94,6 +114,9 @@
 // - A const variable also cannot be uninitialized. The following code would also throw an error:
 //      EXAMPLE: const firstName;
 
+// - If your loop, function, or overall program is no longer relying on a certain variable, this makes that variable an UNUSED DECLARATION. 
+// - Generally, you want to avoid unused declarations to prevent future confusion.
+
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -118,13 +141,37 @@
 //      EXAMPLE: test = test + 1;
 //               test += 1;
 
+// - Just like addition, there are different operators you can use for subtraction.
+// - The SUBTRACTION ASSIGNMENT OPERATOR (-=) subtracts the given value from the current variable value, 
+// then assigns the result back to the variable.
+
 // - If you are only increasing i by 1, you can use the INCREMENT OPERATOR (++).
 // - This operator increases the value of a variable by 1, updating the assignment for that variable.
 // - In the following example, test would become 8 here:
 //      EXAMPLE: let test = 7;
 //               test++;
 
-// -
+// - If you are only subtracting one from i, you can use the DECREMENT OPERATOR (--). 
+// - This operator decreases the value of a variable by 1, updating the assignment for that variable.
+// - In the following example, i would become 5:
+//      EXAMPLE: let i = 6;
+//               i--;
+
+// - You can use the LESS THAN OR EQUAL TO OPERATOR (<=) for when a variable is less than or equal to something else.
+//      EXAMPLE: i <= count;
+
+// - The EQUALITY OPERATOR (==) is used to check if two values are equal. To compare two values, you'd use a statement like this:
+//      EXAMPLE: value == 8
+// - The equality operator can lead to some strange behavior in JavaScript.
+// - For example, "0" == 0 is true, even though one is a string and one is a number.
+
+// - The STRICT EQUALITY OPERATOR (===) is used to check if two values are equal and share the same type.
+// - As a general rule, this is the equality operator you should always use.
+// - With the strict equality operator, "0" === 0 becomes false, because while they might have the same value of zero, 
+// they are not of the same type.
+
+// - The STRICT INEQUALITY OPERATOR (!==) allows you to check if two values are not equal, or do not have the same type. 
+// - The syntax is similar to the equality operator: value !== 4.
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -226,12 +273,17 @@
 // - A METHOD in JavaScript is a function that's associated with certain values or objects.
 // - An example of this is the .log() method, which is part of the console object.
 
+
 // - ** ARRAY METHODS **
 
 // - .push()
 // - Arrays have their own methods, such as the .push() method. This allows you to "push" a value to the end of an array.
 // - The following example adds the number 12 to the end of an array:
 //      EXAMPLE: array.push(12);
+// - .push() also returns the new length of an array, after adding the value you give it.
+//      EXAMPLE: let rows = ["Naomi", "Quincy", "CamperChan"];
+//               let pushed = rows.push("Jason");
+//               console.log(pushed);   // This would print 4 in the console
 
 // - .pop()
 // - Another essential method is the .pop() method. It removes the last element from an array and returns that element.
@@ -240,15 +292,31 @@
 //      EXAMPLE: let rows = ["Naomi", "Quincy", "CamperChan"];
 //               rows.push("Jason");
 //               let popped = rows.pop();
-//               console.log(popped); // prints Jason
+//               console.log(popped);   // Prints Jason
 // - In the above example, "Jason" is printed to the console. This is because .pop() returns the value that was removed 
 // from the array - and "Jason" was pushed to the end of the array earlier.
 
-// - .push()
-// - .push() also returns the new length of an array, after adding the value you give it.
-//      EXAMPLE: let rows = ["Naomi", "Quincy", "CamperChan"];
-//               let pushed = rows.push("Jason");
-//               console.log(pushed); // This would print 4 in the console
+// - .unshift()
+// - The .unshift() method of an array allows you to add a value to the beginning of the array, unlike .push() which 
+// adds the value at the end of the array.
+// - .unshift() returns the new length of the array it was called on.
+//      EXAMPLE: const countDown = [2, 1, 0];
+//               const newLength = countDown.unshift(3);
+//               console.log(countDown);    // Prints [3, 2, 1, 0]
+//               console.log(newLength);    // Prints 4
+
+// - .shift()
+// - Arrays also have a .shift() method. This will remove the first element of the array, unlike .pop() which 
+// removes the last element.
+//      EXAMPLE: const numbers = [1, 2, 3];
+//               numbers.shift();
+// - In the example above, the numbers array would be [2, 3].
+
+
+// - ** ARRAY PROPERTIES **
+
+// - Arrays have a special length property that allows you to see how many values, or elements, are in the array. 
+// - You would access this property using syntax like: myArray.length.
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -259,7 +327,7 @@
 // - When you have to perform a task repeatedly until a condition is met, you will use a loop. 
 // - There are many ways to write a loop.
 
-// - A basic for loop uses the following syntax:
+// - A basic FOR LOOP uses the following syntax:
 //      SYNTAX: for (iterator; condition; iteration) {
 //                  logic;
 //              }
@@ -308,6 +376,19 @@
 // 
 //               }
 // NOTE: You can use const because the variable only exists for a single iteration, not during the entire loop.
+
+// - A WHILE LOOP will run over and over again until the CONDITION specified is no longer true. It has the following syntax:
+//      SYNTAX: while (condition) {
+//                logic;
+//              }
+
+// - In the example below, if you change continueLoop to true, your while loop will run forever.
+// - This is called an INFINITE LOOP, and you should be careful to avoid these.
+// - An infinite loop can lock up your system, requiring a full restart to escape.
+//      EXAMPLE: let continueLoop = false;
+//               while (continueLoop) {
+// 
+//               }
 
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -460,9 +541,81 @@
 //               console.log(name); // reference error
 
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ** CONDITIONALS **
 
 
+// - An IF STATEMENT allows you to run a block of code only when a condition is met. 
+// - They use the following syntax:
+//      SYNTAX: if (condition) {
+//                  logic
+//              }
 
+// - In the example below, you'll see the string printed in the console, because true is in fact true.
+//      EXAMPLE: if (true) {
+//                  console.log("Condition is true");
+//               }
+
+// - In the example below, the string will no longer print, because false is not true. 
+//      EXAMPLE: if (false) {
+//                  console.log("Condition is true");
+//               }
+
+// - In the example below, you'll see the string printed in the console again.  This is because "false" is a string, 
+// which when evaluated to a boolean becomes true. This means "false" is a truthy value.
+//      EXAMPLE: if ("false") {
+//                  console.log("Condition is true");
+//               }
+
+// - A TRUTHY VALUE is a value that is considered true when evaluated as a boolean. 
+// - Most of the values you encounter in JavaScript will be truthy.
+
+// - A FALSY VALUE is the opposite - a value considered false when evaluated as a boolean. 
+// - JavaScript has a defined list of falsy values. Some of them include false, 0, "", null, undefined, and NaN.
+//      EXAMPLE: if ("") {
+//                  console.log("Condition is true");
+//               }
+// - In the example above, the string will no longer print again. This is because empty strings evaluate to false, making them a falsy value.
+
+// - In addition to if statements, JavaScript also has else if statements. 
+// - ELSE IF STATEMENTS allow you to check multiple conditions in a single block of code.
+// - Here is the syntax for an else if statement:
+//      SYNTAX: if (condition1) {
+//                  // code to run if condition1 is true
+//              } else if (condition2) {
+//                  // code to run if condition2 is true
+//              } else if (condition3) {
+//                  // code to run if condition3 is true
+//              } 
+// - If the first condition is false, JavaScript will check the next condition in the chain. If the second condition is false, JavaScript 
+// will check the third condition, and so on.
+//      EXAMPLE: if ("") {
+//                  console.log("Condition is true");
+//               } else if (5 < 10) {
+//                  console.log("5 is less than 10");
+//               }
+// - In the example above, the string "5 is less than 10" would be printed in the console.
+
+// - Sometimes you will want to run different code when all of the if...else if conditions are false. You can do this by adding an else block.
+// - An ELSE block will only evaluate if the conditions in the if and else if blocks are not met.
+// - In the example below, the else block is added to the else if block.
+//      SYNTAX: if (condition) {
+//                  // this code will run if condition is true
+//               } else if (condition2) {
+//                  // this code will run if the first condition is false
+//               } else {
+//                  // this code will run 
+//                  // if the first and second conditions are false
+//               }
+// - In the example below, the string "This is the else block" would be printed in the console.
+//      EXAMPLE: if ("") {
+//                  console.log("Condition is true");
+//               } else if (5 > 10) {
+//                  console.log("5 is less than 10");
+//               } else {
+//                  console.log("This is the else block")
+//               }
 
 
 
